@@ -227,9 +227,9 @@ class _CustomerHomePageState extends State<CustomerHomePage> {
               child: PageView(
                 controller: _pageController,
                 children: [
-                  buildNewsItem('The Batelec Logo', 'assets/images/batelec1logowhite.jpg'),
-                  buildNewsItem('The Batelec Logo', 'assets/images/batelec1logowhite.jpg'),
-                  buildNewsItem('The Batelec Logo', 'assets/images/batelec1logowhite.jpg'),
+                  buildNewsItem('Electric Price Hike!', 'assets/images/pay-bills.jpg'),
+                  buildNewsItem('Typhoon Affects Grid', 'assets/images/typhoon.jpg'),
+                  buildNewsItem('A fresh new app for Batelec users!', 'assets/images/batelec1logowhite.jpg'),
                 ],
               ),
             ),

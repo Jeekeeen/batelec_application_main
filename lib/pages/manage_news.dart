@@ -8,17 +8,19 @@ class ManageNewsPage extends StatelessWidget {
         backgroundColor: Colors.green,
         title: Text('Manage News'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            _buildNewsItem(context, 'assets/images/power_outage.jpg', 'News 1 Title'),
-            SizedBox(height: 20),
-            _buildNewsItem(context, 'assets/images/batelec1logowhitejpg', 'News 2 Title'),
-            SizedBox(height: 20),
-            _buildNewsItem(context, 'assets/images/billing-history.jpg', 'News 3 Title'),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              _buildNewsItem(context, 'assets/images/pay-bills.jpg', 'Electric Price Hike!'),
+              SizedBox(height: 20),
+              _buildNewsItem(context, 'assets/images/carina.jpg', 'Typhoon Affects Grid'),
+              SizedBox(height: 20),
+              _buildNewsItem(context, 'assets/images/batelec1logowhite.jpg', 'A fresh new app for Batelec users!'),
+            ],
+          ),
         ),
       ),
     );
