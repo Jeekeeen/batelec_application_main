@@ -1,0 +1,33 @@
+name: batelec
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  fl_chart: 0.35.0
+  flutter_form_builder: ^9.3.0
+  form_builder_validators: ^11.0.0
+  cupertino_icons: ^1.0.6
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+
+  assets:
+    - assets/images/batelec1logowhite.jpg
+    - assets/images/batelecbuildingblur.jpg
+    - assets/images/billing-history.jpg 
+    - assets/images/power_outage.jpg 
+    - assets/images/pay-bills.jpg
+    - assets/images/outage-schedule.jpg 
+
+  uses-material-design: true
