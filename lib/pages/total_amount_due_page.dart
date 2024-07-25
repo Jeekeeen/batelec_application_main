@@ -123,7 +123,7 @@ class TotalAmountDuePage extends StatelessWidget {
                   SizedBox(height: 10),
                   Center(
                     child: Text(
-                      'Average Usage for 13 months: 389 kWh',
+                      'Average Usage for 13 months: 480 kWh',
                       style: TextStyle(fontSize: 16),
                     ),
                   ),
