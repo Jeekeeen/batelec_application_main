@@ -216,7 +216,7 @@ class _PayBillsPageState extends State<PayBillsPage> {
                         ),
                         SizedBox(height: 8),
                         Text(
-                          'PHP 1500.00',
+                          'PHP 3,123.78',
                           style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.green[700]),
                         ),
                       ],

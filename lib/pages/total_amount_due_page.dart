@@ -81,7 +81,7 @@ class TotalAmountDuePage extends StatelessWidget {
                         ),
                         SizedBox(height: 10),
                         Text(
-                          'Due Date: June 10, 2024',
+                          'Due Date: July 27, 2024',
                           style: TextStyle(fontSize: 16),
                         ),
                         SizedBox(height: 20),

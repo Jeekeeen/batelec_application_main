@@ -14,11 +14,11 @@ class ManageNewsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              _buildNewsItem(context, 'assets/images/pay-bills.jpg', 'Electric Price Hike!'),
+              _buildNewsItem(context, 'assets/images/billing-history.jpg', 'Electric Price Hike!'),
               SizedBox(height: 20),
-              _buildNewsItem(context, 'assets/images/carina.jpg', 'Typhoon Affects Grid'),
+              _buildNewsItem(context, 'assets/images/outage-schedule.jpg', 'Outage on July 27!'),
               SizedBox(height: 20),
-              _buildNewsItem(context, 'assets/images/batelec1logowhite.jpg', 'A fresh new app for Batelec users!'),
+              _buildNewsItem(context, 'assets/images/pay-bills.jpg', 'Pay Bills via Phone!'),
             ],
           ),
         ),
