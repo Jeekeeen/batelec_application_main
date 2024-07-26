@@ -4,7 +4,8 @@
 John Randell C. Caringal
 John Jachin V. Reyes
 John Claude Mike R. Manalo
-Overview of The Project
+
+### Overview of The Project ###
 Batelec GO! is an innovative application designed to streamline the payment process and outage tracking within the designated grid area onto handheld or mobile devices. End-users who are subscribed to the electricity provider will be able to view and act upon critical information such as their recurring billing for the current month, choose different payment options, and view previous payment history.
 
 ## ***Introduction*** ##
@@ -30,9 +31,9 @@ Scheduled Interruption Notifications: The app keeps users informed about schedul
 News and Updates: The Batelec Application also provides users with the latest news and updates related to electricity services in the province. This feature ensures that users are well-informed about any changes or developments that may affect their electricity supply.
 
 ### ***Objectives*** ###
-To provide Batelec customers with a user-friendly mobile application for managing their electricity services.
-To streamline the bill payment process by offering secure and convenient payment options.
-To enhance communication between Batelec and its customers regarding scheduled outages and service requests.
+1. To provide Batelec customers with a user-friendly mobile application for managing their electricity services.
+2. To streamline the bill payment process by offering secure and convenient payment options.
+3. To enhance communication between Batelec and its customers regarding scheduled outages and service requests.
 
 ### ***Project Description*** ###
 ### Scope and Limitations ###
@@ -60,21 +61,33 @@ News and Updates: Provides the latest news and updates related to electricity se
 ### ***Technologies*** ###
 Front-End Development:
 Dart and Flutter
+
 Back-End Development:
 Server and Language: Node.js with Express.js
+
 Database: PostgreSQL or MySQL
 Real-Time Features: WebSockets
+
 User Authentication and Security:
 Authentication: Firebase Authentication
+
 Security: HTTPS (SSL/TLS Certificates)
+
 Payment Integration:
 Stripe API
+
 Service Requests and Maintenance:
 Zendesk API
+
 Analytics and Monitoring:
 Analytics: Google Analytics
+
 Monitoring: New Relic
+
 Cloud Services and Hosting:
+
 Hosting: AWS (Amazon Web Services)
+
 Database Hosting: Amazon RDS
+
 Notifications: Firebase Cloud Messaging
