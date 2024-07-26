@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'admin_login_page.dart'; // Import your AdminLoginPage
+import 'admin_login_page.dart';
 import 'customer_home_page.dart';
 import 'register_page.dart';
 
@@ -13,14 +13,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _obscureText = true;
 
-  bool _validateUser(String input, String password) {
+  bool _validateUser(String email, String password) {
     for (var user in widget.registeredUsers) {
-      if ((user['username'] == input || user['houseNumber'] == input) && user['password'] == password) {
+      if (user['email'] == email && user['password'] == password) {
         return true;
       }
     }
@@ -75,24 +75,22 @@ class _LoginPageState extends State<LoginPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         TextFormField(
-                          controller: usernameController,
+                          controller: emailController,
                           style: TextStyle(color: Colors.white),
                           cursorColor: Colors.white,
                           decoration: InputDecoration(
                             filled: true,
                             fillColor: Colors.white.withOpacity(0.1),
-                            labelText: 'Username or House Number',
+                            labelText: 'Email',
                             labelStyle: TextStyle(color: Colors.white),
                             border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.house_outlined, color: Colors.green[700]),
+                            prefixIcon: Icon(Icons.email, color: Colors.green[700]),
                           ),
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Please enter your username or house number';
-                            } else if (value.length >= 20) {
-                              return 'Username or house number must be less than or at most 20 characters long';
-                            } else if (!RegExp(r'^[a-zA-Z0-9#.,-]+$').hasMatch(value)) {
-                              return 'Username or house number should only contain letters, numbers, spaces, and special characters';
+                              return 'Please enter your email';
+                            } else if (!value.contains('@')) {
+                              return 'Please enter a valid email';
                             }
                             return null;
                           },
@@ -138,18 +136,18 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
-                              String input = usernameController.text;
+                              String email = emailController.text;
                               String password = passwordController.text;
-                              if (_validateUser(input, password)) {
+                              if (_validateUser(email, password)) {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CustomerHomePage(username: input),
+                                    builder: (context) => CustomerHomePage(username: email),
                                   ),
                                 );
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text('Invalid username, house number, or password. Please try again or sign up.')),
+                                  SnackBar(content: Text('Invalid email or password. Please try again or sign up.')),
                                 );
                               }
                             }

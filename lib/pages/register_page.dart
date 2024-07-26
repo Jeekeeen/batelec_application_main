@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart'; // Ensure this is the correct import for your LoginPage
+import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   final List<Map<String, String>> registeredUsers;
@@ -11,14 +11,16 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final TextEditingController usernameController = TextEditingController();
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController fullNameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController houseNumberController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
-  void _registerUser(String username, String password, String houseNumber) {
+  void _registerUser(String email, String fullName, String password, String houseNumber) {
     widget.registeredUsers.add({
-      'username': username,
+      'email': email,
+      'fullName': fullName,
       'password': password,
       'houseNumber': houseNumber
     });
@@ -55,22 +57,38 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Column(
                     children: <Widget>[
                       TextFormField(
-                        controller: usernameController,
+                        controller: fullNameController,
                         style: TextStyle(color: Colors.white),
                         cursorColor: Colors.white,
                         decoration: InputDecoration(
-                          labelText: 'Username',
+                          labelText: 'Full Name',
                           labelStyle: TextStyle(color: Colors.white),
                           border: OutlineInputBorder(),
                           prefixIcon: Icon(Icons.person, color: Colors.green[700]),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter a username';
-                          } else if (value.length >= 20) {
-                            return 'Username must be less than 20 characters long';
-                          } else if (!RegExp(r'^[a-zA-Z0-9#.,-]+$').hasMatch(value)) {
-                            return 'Username should only contain letters, numbers, and special characters';
+                            return 'Please enter your full name';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      TextFormField(
+                        controller: emailController,
+                        style: TextStyle(color: Colors.white),
+                        cursorColor: Colors.white,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: Colors.white),
+                          border: OutlineInputBorder(),
+                          prefixIcon: Icon(Icons.email, color: Colors.green[700]),
+                        ),
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter an email';
+                          } else if (!value.contains('@')) {
+                            return 'Please enter a valid email';
                           }
                           return null;
                         },
@@ -123,7 +141,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         onPressed: () {
                           if (_formKey.currentState!.validate()) {
-                            _registerUser(usernameController.text, passwordController.text, houseNumberController.text);
+                            _registerUser(emailController.text, fullNameController.text, passwordController.text, houseNumberController.text);
                             Navigator.pop(context); // Go back to the login page
                           }
                         },
