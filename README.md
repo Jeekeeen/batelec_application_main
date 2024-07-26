@@ -53,9 +53,13 @@ Prototype Nature: As a prototype, the application may not include all potential 
 
 ### ***Features*** ###
 Energy Usage and Billing History: Lets users see their energy use and billing history.
+
 Total Amount Due: Shows the total amount for the current bill that is currently owed for payment.
+
 Pay Bills: Allows quick and secure bill payments with flexible payment options directly through the app.
+
 Outage Schedule: Keeps users informed about upcoming brownouts so they can plan accordingly.
+
 News and Updates: Provides the latest news and updates related to electricity services in the province.
 
 ### ***Technologies*** ###
