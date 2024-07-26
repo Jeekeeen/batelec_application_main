@@ -2,7 +2,9 @@
 
 ## Meet The Team ##
 John Randell C. Caringal
+
 John Jachin V. Reyes
+
 John Claude Mike R. Manalo
 
 ### Overview of The Project ###
